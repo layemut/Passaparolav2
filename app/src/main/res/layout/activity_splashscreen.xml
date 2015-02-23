@@ -1,0 +1,235 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainbg"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="oem.com.passaparolav2.splashscreen">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+
+        >
+
+        <ru.biovamp.widget.CircleLayout
+            android:id="@+id/circle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            >
+
+            <ImageButton
+                android:id="@+id/b11"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/m" />
+
+            <ImageButton
+                android:id="@+id/b12"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/n" />
+
+            <ImageButton
+                android:id="@+id/b13"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/o" />
+
+            <ImageButton
+                android:id="@+id/b14"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/p" />
+
+            <ImageButton
+                android:id="@+id/b15"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/r" />
+
+            <ImageButton
+                android:id="@+id/b16"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/s" />
+
+            <ImageButton
+                android:id="@+id/b17"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/t" />
+
+            <ImageButton
+                android:id="@+id/b18"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/u" />
+
+            <ImageButton
+                android:id="@+id/b19"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/y" />
+
+            <ImageButton
+                android:id="@+id/b20"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/z" />
+
+            <ImageButton
+                android:id="@+id/b0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/a" />
+
+            <ImageButton
+                android:id="@+id/b1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/b" />
+
+            <ImageButton
+                android:id="@+id/b2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/c" />
+
+            <ImageButton
+                android:id="@+id/b3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/d" />
+
+            <ImageButton
+                android:id="@+id/b4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/e" />
+
+            <ImageButton
+                android:id="@+id/b5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/f" />
+
+            <ImageButton
+                android:id="@+id/b6"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/g" />
+
+            <ImageButton
+                android:id="@+id/b7"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/h" />
+
+            <ImageButton
+                android:id="@+id/b8"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/i" />
+
+            <ImageButton
+                android:id="@+id/b9"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/k" />
+
+            <ImageButton
+                android:id="@+id/b10"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bluebg"
+                android:scaleType="fitXY"
+                android:src="@drawable/l" />
+        </ru.biovamp.widget.CircleLayout>
+
+        <ImageButton
+            android:id="@+id/passaView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/header" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_weight="65"
+        >
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/buttonbg"
+            android:text="Başla" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/buttonbg"
+            android:text="Hakkında" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/buttonbg"
+            android:text="Ayarlar" />
+    </LinearLayout>
+
+</LinearLayout>

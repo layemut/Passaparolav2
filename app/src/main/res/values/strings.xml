@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Passaparolav2</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splashscreen">splashscreen</string>
+    <string name="splashInfo">Developed by humble team</string>
+
+    <string-array name="questions">
+        <item>Sayı Boncuğu,çörkü</item>
+        <item>Bir düşünceye, bir inanışa aşırı ölçüde bağ lanıp ondan başkasınıdüşünmeme durumu, taassup.</item>
+        <item>Para ve malını esirgemeden veren,eli açık, selek, semih.</item>
+        <item>Çini işlemeciliğiyle ünlü ilimiz hangisidir ?</item>
+        <item>Altmış beş santimetre boyunda bir uzunluk ölçüsü</item>
+        <item>Eski dilde anlayış, sezgi, zeka</item>
+        <item>Korku, çekinme ve kuşku duymama hali</item>
+        <item>Artvin’in bir ilçesi</item>
+        <item>abd başkanı eisenhover’in takma adı</item>
+        <item>Erkek kardeş anlamına gelen Erzurum yöresine ait bir ifade</item>
+        <item>Osmanlıda bir devrede ismini vermiş çiçeğin adı</item>
+        <item>İki Nehir Anlamına Gelen, Fırat Ve Dicle Nehirleri Arasındaki Topraklara Daha Geniş Anlamda Sattülarabin İki Yakasında Ve İran Yaylasının Batı Eteğinde Bulunan Ülkelere Tarih Boyunca Verilen İsimdir. Uygarlıkların Merkezi Olmuş Ve Ev Sahipliği Yapmış Olan Bu Bölgenin Adı Nedir?</item>
+        <item>Budizm inanışında ulaşılabilecek en yüksek mertebe hangisidir ?</item>
+        <item>Uyumsuz olduklarında armonik faciaya neden olan grup</item>
+        <item>Bir kopça veya lastikle yakaya tutturulan kelebek biçimindeki kravata ne ad verilir ?</item>
+        <item>Aleut takımadalarında yer alan adalar</item>
+        <item>İhanetle sona eren tutum</item>
+        <item>Akdeniz anemisi adı da verilen bir hastalık</item>
+        <item>Afrika’nın en yüksek dağı kilimanjaro’nun, yerli dillerde “özgürlük” anlamına gelen yeni adı</item>
+        <item>Arabistan yarımadasının güneyinde bir devlet</item>
+        <item>Altıkardeş takım yıldızı</item>
+
+    </string-array>
+
+    <string-array name="answers">
+        <item>Abaküs</item>
+        <item>Bağnazlık</item>
+        <item>Cömert</item>
+        <item>Dadaş</item>
+        <item>Endaze</item>
+        <item>Faraset</item>
+        <item>Güven</item>
+        <item>Hopa</item>
+        <item>İke</item>
+        <item>Kütahya</item>
+        <item>Lale</item>
+        <item>Mezopotamya</item>
+        <item>Nirvana</item>
+        <item>Orkestra</item>
+        <item>Papyon</item>
+        <item>Rat</item>
+        <item>Sadakat</item>
+        <item>Talasemi</item>
+        <item>Uhuru</item>
+        <item>Yemen</item>
+        <item>Zatülkürsi</item>
+
+    </string-array>
+    <string name="title_activity_word_finding">word_finding</string>
+
+</resources>
