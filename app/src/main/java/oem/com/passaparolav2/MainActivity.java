@@ -30,6 +30,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -42,9 +43,7 @@ public class MainActivity extends Activity {
     ImageButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20;
     ImageButton correctCounterButton, wrongCounterButton, passCounterButton;
     LinkedList<ImageButton> letters = new LinkedList<ImageButton>();
-    ArrayList<Integer> passPosition = new ArrayList<>();
     TextView timer, questionView, correctText, passText, wrongText;
-    View circle;
     EditText answerText;
 
     private static final String FORMAT = "%02d:%02d";
@@ -78,9 +77,8 @@ public class MainActivity extends Activity {
     };
 
     int letterCounter = 0, passNumber = 0, wrongNumber = 0, correctNumber = 0;
-    final Random rdm = new Random();
-    int[] answerNumber = new int[22];
-    int[] passed = new int[22];
+    int[] answerList = new int[21];
+    int[] answered = new int[21];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,9 +87,10 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
+        Random rdm = new Random();
         for (int i = 0; i < letters.size(); i++) {
-            answerNumber[i] = rdm.nextInt(2);
-            passed[i] = 0;
+            answerList[i]=rdm.nextInt(2);
+            answered[i] = 0;
         }
 
         final Animation letterAnim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.mainfadeinout);
@@ -103,23 +102,8 @@ public class MainActivity extends Activity {
         //button set-up
         setButtons();
 
-        //button dimention set-up
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int height = size.y;
-
-        correctCounterButton.getLayoutParams().height = height / 17;
-        correctCounterButton.getLayoutParams().width = height / 17;
-        passCounterButton.getLayoutParams().height = height / 17;
-        passCounterButton.getLayoutParams().width = height / 17;
-        wrongCounterButton.getLayoutParams().height = height / 17;
-        wrongCounterButton.getLayoutParams().width = height / 17;
-        for (int i = 0; i < letters.size(); i++) {
-            letters.get(i).getLayoutParams().height = height / 17;
-            letters.get(i).getLayoutParams().width = height / 17;
-        }
-
+        //button dimension set-up
+        setDimensions();
 
         //Animation set-up
         setAnimation();
@@ -133,29 +117,41 @@ public class MainActivity extends Activity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
+
                     correctCounterButton.clearAnimation();
                     wrongCounterButton.clearAnimation();
                     letters.get(letterCounter).clearAnimation();
 
-                    boolean flag = true;
-                    answerText.setText(answerText.getText().toString().toLowerCase());
+                    answered[letterCounter] = 1;
 
-                    if (answerText.getText().toString().equals(answers[letterCounter][answerNumber[letterCounter]])) {
+                    //lowercasing the answer given by user
+                    String answer = answerText.getText().toString().toLowerCase();
+
+                    //checking if it is matched with true answer
+                    if (answer.equals(answers[letterCounter][answerList[letterCounter]])) {
                         correctNumber++;
                         correctText.setText("" + correctNumber);
                         letters.get(letterCounter).setBackgroundResource(R.drawable.greenbg);
-                        letterCounter++;
-                        letters.get(letterCounter).setAnimation(letterAnim);
+                        correctCounterButton.setAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.popupanim));
+                        //if not, set wrong.
                     } else {
                         wrongNumber++;
                         wrongText.setText("" + wrongNumber);
                         letters.get(letterCounter).setBackgroundResource(R.drawable.redbg);
-                        letterCounter++;
-                        letters.get(letterCounter).setAnimation(letterAnim);
-
+                        wrongCounterButton.setAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.popupanim));
                     }
 
-                    questionView.setText(questions[letterCounter][answerNumber[letterCounter]]);
+                    //if all unanswered or passed, start again.
+                    if (letterCounter > 20) letterCounter = 0;
+
+                    //only starts from unanswered of passed questions, skips answered.
+                    while (answered[letterCounter] != 0) {
+                        letterCounter++;
+                        if(letterCounter>20)letterCounter=0;
+                    }
+
+                    letters.get(letterCounter).setAnimation(letterAnim);
+                    questionView.setText(questions[letterCounter][answerList[letterCounter]]);
                     answerText.setText("");
                     return true;
                 }
@@ -168,17 +164,20 @@ public class MainActivity extends Activity {
                 passCounterButton.clearAnimation();
                 letters.get(letterCounter).clearAnimation();
                 letters.get(letterCounter).setBackgroundResource(R.drawable.yellowbg);
-                passed[letterCounter] = 1;
-                letterCounter++;
-                if (letterCounter > 20) {
-                    resetViews();
-                }
-                letters.get(letterCounter).setAnimation(letterAnim);
-                questionView.setText(questions[letterCounter][answerNumber[letterCounter]]);
-                passNumber++;
                 passCounterButton.setAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.popupanim));
+                passNumber++;
                 passText.setText("" + passNumber);
                 answerText.setText("");
+
+                if (letterCounter > 20) letterCounter = 0;
+
+                do{
+                    letterCounter++;
+                    if(letterCounter>20)letterCounter=0;
+                }while(answered[letterCounter]!=0);
+
+                letters.get(letterCounter).setAnimation(letterAnim);
+                questionView.setText(questions[letterCounter][answerList[letterCounter]]);
 
             }
         });
@@ -195,7 +194,7 @@ public class MainActivity extends Activity {
         wrongNumber = 0;
         correctNumber = 0;
         passNumber = 0;
-        questionView.setText(questions[letterCounter][answerNumber[letterCounter]]);
+        questionView.setText(questions[letterCounter][answerList[letterCounter]]);
         correctText.setText("" + correctNumber);
         wrongText.setText("" + wrongNumber);
         passText.setText("" + passNumber);
@@ -203,7 +202,7 @@ public class MainActivity extends Activity {
     }
 
     public void initViews() {
-        questionView.setText(questions[letterCounter][answerNumber[letterCounter]]);
+        questionView.setText(questions[letterCounter][answerList[letterCounter]]);
     }
 
     public void setAnimation() {
@@ -270,6 +269,25 @@ public class MainActivity extends Activity {
         letters.add((ImageButton) b20);
     }
 
+    public void setDimensions() {
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int height = size.y;
+
+        correctCounterButton.getLayoutParams().height = height / 17;
+        correctCounterButton.getLayoutParams().width = height / 17;
+        passCounterButton.getLayoutParams().height = height / 17;
+        passCounterButton.getLayoutParams().width = height / 17;
+        wrongCounterButton.getLayoutParams().height = height / 17;
+        wrongCounterButton.getLayoutParams().width = height / 17;
+        for (int i = 0; i < letters.size(); i++) {
+            letters.get(i).getLayoutParams().height = height / 17;
+            letters.get(i).getLayoutParams().width = height / 17;
+        }
+
+    }
+
     public class cdTimer extends CountDownTimer {
 
         int time = 0;
@@ -280,7 +298,7 @@ public class MainActivity extends Activity {
 
         @Override
         public void onFinish() {
-            timer.setText("Süre Doldu.");
+            Toast.makeText(MainActivity.this,"TAMAM SAKİN OL ŞAMPİYON, SÜRE BİTTİ",Toast.LENGTH_LONG).show();
         }
 
         @Override

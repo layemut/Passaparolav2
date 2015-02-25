@@ -18,14 +18,6 @@ TextView deneme;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_finding);
-        deneme=(TextView)findViewById(R.id.deneme);
-        for(int i=0;i<15;i++){
-            intdeneme.add(i);
-        }
-        intdeneme.remove(5);
-        for(int i=0;i<14;i++){
-            deneme.setText(deneme.getText()+intdeneme.get(i).toString());
-        }
 
     }
 
