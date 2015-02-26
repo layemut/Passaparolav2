@@ -1,38 +1,22 @@
 package oem.com.passaparolav2;
 
+
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Point;
-import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -48,37 +32,55 @@ public class MainActivity extends Activity {
 
     private static final String FORMAT = "%02d:%02d";
     String[][] questions = {
-            {"Delta ovalarında biriken çok verimli toprak.", "Fizikte, elektrik akımının şiddet birimi "},
-            {"Avrupa Birliğinin başkenti.", "İpeği ve şeftalisi ile meşhur ilimiz."},
-            {"Ölüm cezasına çarptırılanları öldürmekle görevli kimse.", "Güç veya tehlikeli bir işe girişirken insanın kendinde bulduğu güven"},
-            {"İçki ve yiyecek gibi şeylerde standart miktarın iki katı.", " Deseni karelerden oluşmuş olan kumaş."},
-            {"Bireysel çıkarların, başkalarının çıkarlarının üstünde tutulması.", "Uzun süre saklanabilen yiyeceklerin genel adı."},
-            {"Eski dilde anlayış, sezgi, zeka.", "50 ile 300 hektolitre alabilen büyük fıçılara verilen ad."},
-            {"Albaylıktan sonra gelen yüksek rütbeli subaylara verilen genel ad.", "Çanakkale savaşları'nın yaşandığı Çanakkale ilçesi."},
-            {"Ekin biçme, ürün kaldırma işi.", "Bineğe veya yük taşımaya alıştırılmamış at ya da eşek sürüsü."},
-            {"Yasa ve kurallara aykırı biçimde haksız olarak kayırma.", "Toplum hayatından kaçıp tek başına yaşama"},
-            {"Rus haber alma örgütünün kısa adı.", "Ocak bacalarında biriken veya çevrede savrulan kalın ise verilen ad."},
-            {"Alkol su ve şeker karışımından oluşan içki", "Palamut, torik gibi balıklardan dilim dilim kesilerek yapılan salamura"},
-            {"Göktürk Yazıtları bulunduğu ülke.", "Bira yapımında kullanılan çimlenmiş ve kavrulmuş arpa."},
-            {"Avrupa Birliğini iki kez halk oylamasiyla reddeden ülkedir.", "Japonya'nın hangi kentine Atatürk anıtı dikilmiştir?"},
-            {"Para ve emek harcamadan başkalarının sırtından geçinen kimseye ne ad verilir?", "Uyumsuz olduklarında armonik faciaya neden olan grup."},
-            {"Orta oyunu'nun ana karakterlerinden Kavuklu olmayan.", " Çokeşli evliliğin sosyolojideki adı."},
-            {"Kışlalarda hafif hastaların tedavi edildiği yer.", "Denizcilikte düzgün sarılmış halat yumağına verilen ad."},
-            {"İran mitolojisinde, ateşten yaratılan ve ateşte yaşayan hayvan.", "7. sanat olarak da tabir edilen sanat."},
-            {"Teknelerle suyun dibinde sürüklenerek çekilen balık ağı.", "Akdeniz anemisi adı da verilen bir hastalık "},
-            {"Eskiden çöl arapları ve bedevilere verilen ad.", "Budizmi benimseyen ilk Türk devleti."},
-            {"Ağız ve burun boşluklarıyla, gırtlak ve yemek borusu arasındaki boşluğa verilen ad.", "Türkiye'nin ilk milli parkının bulunduğu il."},
-            {"Bakırcılıkta kullanılan “T” biçimindeki örse verilen ad.", "Altıkardeş takım yıldızı."}};
-    String[][] answers = {{"alüvyon", "amper"}, {"brüksel", "bursa"}, {"cellat", "cesaret"}, {"duble", "dantel"}, {"egoizm", "erzak"},
-            {"feraset", "fulder"}, {"general", "gelibolu"}, {"hasat", "hergele"}, {"iltimas", "inziva"},
-            {"kgb", "kurum"}, {"likör", "lakerda"}, {"moğolistan", "malt"}, {"norveç", "nigata"},
-            {"otlakçı", "orkestra"}, {"pişekar", "poligami"}, {"revir", "roda"}, {"semender", "sinema"},
-            {"trol", "talasemi"}, {"urban", "uygurlar"}, {"yutak", "yozgat"}, {"zava", "zatülkürsi"},
+            {"Delta ovalarında biriken çok verimli toprak.", "Fizikte, elektrik akımının şiddet birimi."
+                    , "Hristanlıkta kilise tarafından verilen \"cemaatten kovma\" cezası"},
+            {"Avrupa Birliğinin başkenti.", "İpeği ve şeftalisi ile meşhur ilimiz.", "Kırgızıstan’ın başkenti."},
+            {"Ölüm cezasına çarptırılanları öldürmekle görevli kimse.", "Güç veya tehlikeli bir işe girişirken insanın kendinde bulduğu güven",
+                    "Eski dilde davranışları çabuk ve kesin olan."},
+            {"İçki ve yiyecek gibi şeylerde standart miktarın iki katı.", " Deseni karelerden oluşmuş olan kumaş."
+                    , "Kuruluşlarda belli bir işi yapmak üzere ayrılmış bölümlerden her biri"},
+            {"Bireysel çıkarların, başkalarının çıkarlarının üstünde tutulması.", "Uzun süre saklanabilen yiyeceklerin genel adı."
+                    , "Sanat ya da yazın yapıtını ana çizgileriyle gösteren ön çalışma"},
+            {"Eski dilde anlayış, sezgi, zeka.", "50 ile 300 hektolitre alabilen büyük fıçılara verilen ad."
+                    , "avuğun istenilen yere yumurtlaması için o yere konulan, yumurta benzeri nesne"},
+            {"Albaylıktan sonra gelen yüksek rütbeli subaylara verilen genel ad.", "Çanakkale savaşları'nın yaşandığı Çanakkale ilçesi."
+                    , "Tarihte Türk adıyla kurulan ilk Türk devleti"},
+            {"Ekin biçme, ürün kaldırma işi.", "Bineğe veya yük taşımaya alıştırılmamış at ya da eşek sürüsü.", "Yüksek sesle bağırmak"},
+            {"Yasa ve kurallara aykırı biçimde haksız olarak kayırma.", "Toplum hayatından kaçıp tek başına yaşama"
+                    , "Gözün renkli kısmı."},
+            {"Rus haber alma örgütünün kısa adı.", "Ocak bacalarında biriken veya çevrede savrulan kalın ise verilen ad."
+                    , "Saatlerin üzerinde rakamlar bulunan iç kısmı."},
+            {"Alkol su ve şeker karışımından oluşan içki", "Palamut, torik gibi balıklardan dilim dilim kesilerek yapılan salamura"
+                    , "Osmanlıda bir devrede ismini vermiş çiçeğin adı."},
+            {"Göktürk Yazıtları bulunduğu ülke.", "Bira yapımında kullanılan çimlenmiş ve kavrulmuş arpa."
+                    , "Türkiye'de sadece iki kişiye verilmiş, bir tanesi Fevzi Çakmak'ta bulunan rütbe."},
+            {"Avrupa Birliğini iki kez halk oylamasiyla reddeden ülkedir.", "Japonya'nın hangi kentine Atatürk anıtı dikilmiştir?"
+                    , "Güneşe yakınlığı bakımından 8. olan gezegen."},
+            {"Para ve emek harcamadan başkalarının sırtından geçinen kimseye ne ad verilir?", "Uyumsuz olduklarında armonik faciaya neden olan grup."
+                    , "Afrika’da yaşayan, gövdesi kızıl kestane, bacakları beyaz çizgili memeli hayvan"},
+            {"Orta oyunu'nun ana karakterlerinden Kavuklu olmayan.", " Çokeşli evliliğin sosyolojideki adı.", "Denizaltılarda su yüzeyini görmeye yarayan metal boru."},
+            {"Kışlalarda hafif hastaların tedavi edildiği yer.", "Denizcilikte düzgün sarılmış halat yumağına verilen ad.", "Mağazanın yalnızca bir tür eşya satılan bölümü"},
+            {"İran mitolojisinde, ateşten yaratılan ve ateşte yaşayan hayvan.", "7. sanat olarak da tabir edilen sanat.",
+                    "Ramazanda oruç tutanların gün doğmadan önce belirli saatte yedikleri yemek."},
+            {"Teknelerle suyun dibinde sürüklenerek çekilen balık ağı.", "Akdeniz anemisi adı da verilen bir hastalık ", "Aşkabat hangi ülkenin başkentidir?"},
+            {"Eskiden çöl arapları ve bedevilere verilen ad.", "Budizmi benimseyen ilk Türk devleti."
+                    , "Afrika’nın en yüksek dağı kilimanjaro’nun, yerli dillerde “özgürlük” anlamına gelen yeni adı."},
+            {"Ağız ve burun boşluklarıyla, gırtlak ve yemek borusu arasındaki boşluğa verilen ad.", "Türkiye'nin ilk milli parkının bulunduğu il."
+                    , "İpsal ve dedeağaç sınır kapıları bizi hangi ülkeye bağlar?"},
+            {"Bakırcılıkta kullanılan “T” biçimindeki örse verilen ad.", "Altıkardeş takım yıldızı."
+                    , "Cam parlaklığında güzel yeşil renkte saydam ve değerli süs taşına verilen ad."}};
+    String[][] answers = {{"alüvyon", "amper", "afaroz"}, {"brüksel", "bursa", "bişkek"}, {"cellat", "cesaret", "cevval"},
+            {"duble", "dantel", "departman"}, {"egoizm", "erzak", "eskiz"},
+            {"feraset", "fulder", "fol"}, {"general", "gelibolu", "göktürkler"}, {"hasat", "hergele", "haykırmak"}, {"iltimas", "inziva", "iris"},
+            {"kgb", "kurum", "kadran"}, {"likör", "lakerda", "lale"}, {"moğolistan", "malt", "mareşal"}, {"norveç", "nigata", "neptün"},
+            {"otlakçı", "orkestra", "okapi"}, {"pişekar", "poligami", "periskop"}, {"revir", "roda", "reyon"}, {"semender", "sinema", "sahur"},
+            {"trol", "talasemi", "türkmenistan"}, {"urban", "uygurlar", "uhuru"}, {"yutak", "yozgat", "yunanistan"}, {"zava", "zatülkürsi", "zümrüt"},
     };
 
     int letterCounter = 0, passNumber = 0, wrongNumber = 0, correctNumber = 0;
     int[] answerList = new int[21];
     int[] answered = new int[21];
+    boolean finishedOnce=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,13 +89,9 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        Random rdm = new Random();
-        for (int i = 0; i < letters.size(); i++) {
-            answerList[i]=rdm.nextInt(2);
-            answered[i] = 0;
-        }
 
         final Animation letterAnim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.mainfadeinout);
+
 
         //timer set-up
         final cdTimer timer = new cdTimer(100000, 1000);
@@ -107,6 +105,9 @@ public class MainActivity extends Activity {
 
         //Animation set-up
         setAnimation();
+
+        //random answers
+        randomAnswers();
 
         //initiate rest of the views
         initViews();
@@ -141,13 +142,19 @@ public class MainActivity extends Activity {
                         wrongCounterButton.setAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.popupanim));
                     }
 
-                    //if all unanswered or passed, start again.
-                    if (letterCounter > 20) letterCounter = 0;
 
-                    //only starts from unanswered of passed questions, skips answered.
+                    //only starts from unanswered or passed questions, skips answered.
                     while (answered[letterCounter] != 0) {
                         letterCounter++;
-                        if(letterCounter>20)letterCounter=0;
+                        if (letterCounter > 20){
+                            letterCounter = 0;
+                            finishedOnce=true;
+                        }
+                    }
+
+                    if(finishedOnce){
+                        passNumber--;
+                        passText.setText("" + passNumber);
                     }
 
                     letters.get(letterCounter).setAnimation(letterAnim);
@@ -165,16 +172,19 @@ public class MainActivity extends Activity {
                 letters.get(letterCounter).clearAnimation();
                 letters.get(letterCounter).setBackgroundResource(R.drawable.yellowbg);
                 passCounterButton.setAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.popupanim));
-                passNumber++;
+                if(!finishedOnce) {
+                    passNumber++;
+                }
                 passText.setText("" + passNumber);
                 answerText.setText("");
 
-                if (letterCounter > 20) letterCounter = 0;
-
-                do{
+                do {
                     letterCounter++;
-                    if(letterCounter>20)letterCounter=0;
-                }while(answered[letterCounter]!=0);
+                    if (letterCounter > 20) {
+                        letterCounter = 0;
+                        finishedOnce =true;
+                    }
+                } while (answered[letterCounter] != 0);
 
                 letters.get(letterCounter).setAnimation(letterAnim);
                 questionView.setText(questions[letterCounter][answerList[letterCounter]]);
@@ -201,6 +211,13 @@ public class MainActivity extends Activity {
         setAnimation();
     }
 
+    public void randomAnswers(){
+        for (int i = 0; i < 21; i++) {
+            Random rdm = new Random();
+            answerList[i] = rdm.nextInt(3);
+            answered[i] = 0;
+        }
+    }
     public void initViews() {
         questionView.setText(questions[letterCounter][answerList[letterCounter]]);
     }
@@ -298,7 +315,7 @@ public class MainActivity extends Activity {
 
         @Override
         public void onFinish() {
-            Toast.makeText(MainActivity.this,"TAMAM SAKİN OL ŞAMPİYON, SÜRE BİTTİ",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "TAMAM SAKİN OL ŞAMPİYON, SÜRE BİTTİ", Toast.LENGTH_LONG).show();
         }
 
         @Override
