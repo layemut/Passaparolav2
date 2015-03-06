@@ -2,6 +2,7 @@ package oem.com.passaparolav2;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.CountDownTimer;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -118,6 +120,9 @@ public class MainActivity extends Activity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
+
+                    InputMethodManager ipmm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    ipmm.hideSoftInputFromWindow(null, 0);
 
                     correctCounterButton.clearAnimation();
                     wrongCounterButton.clearAnimation();

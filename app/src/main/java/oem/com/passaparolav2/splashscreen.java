@@ -41,7 +41,6 @@ public class splashscreen extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splashscreen);
 
-
         final Animation passaViewAnim = AnimationUtils.loadAnimation(splashscreen.this,R.anim.splashtexttranslate);
 
         setUpSplashScreenLetter();

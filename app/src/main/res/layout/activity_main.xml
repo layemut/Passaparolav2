@@ -248,7 +248,7 @@
                 android:layout_marginTop="9dp"
                 android:layout_marginLeft="15dp"
                 android:id="@+id/correctText"
-                android:textColor="#ffffffff" />
+                android:textColor="#ff000000" />
 
             <ImageButton
                 android:layout_width="35dp"
@@ -267,7 +267,7 @@
                 android:layout_marginTop="9dp"
                 android:layout_marginLeft="15dp"
                 android:id="@+id/passText"
-                android:textColor="#ffffffff" />
+                android:textColor="#ff000000" />
 
             <ImageButton
                 android:layout_width="35dp"
@@ -286,7 +286,7 @@
                 android:layout_weight="1"
                 android:id="@+id/wrongText"
                 android:layout_marginTop="9dp"
-                android:textColor="#ffffffff" />
+                android:textColor="#ff000000" />
                </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -299,7 +299,7 @@
                     android:text="02:00"
                     android:id="@+id/timerText"
                     android:textSize="30dp"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#ff000000"
                     android:layout_gravity="center"
                     android:gravity="center"/>
                 </LinearLayout>

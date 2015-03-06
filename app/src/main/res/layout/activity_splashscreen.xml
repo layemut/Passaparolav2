@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbg"
+    android:background="@drawable/splashmainbg"
     android:orientation="vertical"
     android:weightSum="100"
     tools:context="oem.com.passaparolav2.splashscreen">
@@ -25,7 +25,7 @@
                 android:id="@+id/b11"
                 android:layout_width="50px"
                 android:layout_height="50px"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/m" />
 
@@ -33,7 +33,7 @@
                 android:id="@+id/b12"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/n" />
 
@@ -41,7 +41,7 @@
                 android:id="@+id/b13"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/o" />
 
@@ -49,7 +49,7 @@
                 android:id="@+id/b14"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/p" />
 
@@ -57,7 +57,7 @@
                 android:id="@+id/b15"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/r" />
 
@@ -65,7 +65,7 @@
                 android:id="@+id/b16"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/s" />
 
@@ -73,7 +73,7 @@
                 android:id="@+id/b17"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/t" />
 
@@ -81,7 +81,7 @@
                 android:id="@+id/b18"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/u" />
 
@@ -89,7 +89,7 @@
                 android:id="@+id/b19"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/y" />
 
@@ -97,7 +97,7 @@
                 android:id="@+id/b20"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/z" />
 
@@ -105,7 +105,7 @@
                 android:id="@+id/b0"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/a" />
 
@@ -113,7 +113,7 @@
                 android:id="@+id/b1"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/b" />
 
@@ -121,7 +121,7 @@
                 android:id="@+id/b2"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/c" />
 
@@ -129,7 +129,7 @@
                 android:id="@+id/b3"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/d" />
 
@@ -137,7 +137,7 @@
                 android:id="@+id/b4"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/e" />
 
@@ -145,7 +145,7 @@
                 android:id="@+id/b5"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/f" />
 
@@ -153,7 +153,7 @@
                 android:id="@+id/b6"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/g" />
 
@@ -161,7 +161,7 @@
                 android:id="@+id/b7"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/h" />
 
@@ -169,7 +169,7 @@
                 android:id="@+id/b8"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/i" />
 
@@ -177,7 +177,7 @@
                 android:id="@+id/b9"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/k" />
 
@@ -185,7 +185,7 @@
                 android:id="@+id/b10"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/bluebg"
+                android:background="@drawable/splashcirclebuttonbg"
                 android:scaleType="fitXY"
                 android:src="@drawable/l" />
         </ru.biovamp.widget.CircleLayout>
@@ -211,25 +211,31 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#F5F5F5"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/buttonbg"
-            android:text="Başla" />
+            android:background="@drawable/splashbuttonbg"
+            android:text="Başla"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#F5F5F5"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/buttonbg"
-            android:text="Hakkında" />
+            android:background="@drawable/splashbuttonbg"
+            android:text="Hakkında"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#F5F5F5"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/buttonbg"
-            android:text="Ayarlar" />
+            android:background="@drawable/splashbuttonbg"
+            android:text="Ayarlar"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>
